@@ -15,6 +15,11 @@
                         controllerAs: 'ctrl'
                     }
                 }
+                ,
+                data: {
+                    requireLogin: false,
+                    roles: []
+                }
             }).state('booksList', {
                 url: '/list',
                 parent: 'books',
