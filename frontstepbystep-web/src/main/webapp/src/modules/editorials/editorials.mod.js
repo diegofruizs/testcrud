@@ -41,6 +41,39 @@
                         controllerAs: 'ctrl'
                     }
                 }
+            }).state('editorialsCreate', {
+                url: '/create',
+                parent: 'editorials',
+                views: {
+                    'detailView': {
+                        templateUrl: basePath + '/new/editorials.new.html',
+                        controller: 'editorialNewCtrl'
+                    }
+                }
+            }).state('editorialUpdate', {
+                url: '/update/{editorialId:int}',
+                parent: 'editorials',
+                param: {
+                    editorialId: null
+                },
+                views: {
+                    'detailView': {
+                        templateUrl: basePath + '/new/editorials.new.html',
+                        controller: 'editorialUpdateCtrl'
+                    }
+                }
+            }).state('editorialDelete', {
+                url: '/delete/{editorialId:int}',
+                parent: 'editorials',
+                param: {
+                    editorialId: null
+                },
+                views: {
+                    'detailView': {
+                        templateUrl: basePath + '/delete/editorials.delete.html',
+                        controller: 'editorialDeleteCtrl'
+                    }
+                }
             });
         }]);
 })(window.angular);
